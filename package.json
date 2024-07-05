@@ -1,0 +1,16 @@
+{
+  "name": "ping-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "<!-- # Frontend Mentor - Ping coming soon page solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sassCompiler": "sass --watch ./scss/custom.scss ./css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

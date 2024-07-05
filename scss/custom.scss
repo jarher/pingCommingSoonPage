@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "LibreFranklin-Bold";
+  src: "../fonts/LibreFranklin-Bold.ttf";
+}
+// colors
+$blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$very-dark-blue: hsl(209, 33%, 12%);
+$white: hsl(0, 0%, 100%);
+// sizes
+$lg-1_25: 1.25;
+$lg-1_5: 1.5;
+$lg-1_75: 1.75;
+$lg-2_25: 2.25;
+$lg-3_25: 3.25;
+$lg-3_9: 3.9;
+$lg-5_6: 5.6;
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$btn-color: $white;
+$input-border-color: $pale-blue;
+$input-border-width: 1px;
+$input-placeholder-color: $gray;
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer,
+  2: $spacer * $lg-1_25,
+  3: $spacer * $lg-1_5,
+  4: $spacer * $lg-1_75,
+  5: $spacer * $lg-2_25,
+  6: $spacer * $lg-3_25,
+  7: $spacer * $lg-3_9,
+  8: $spacer * $lg-5_6,
+);
+
+$utilities: (
+  "margin": (
+    responsive: true,
+    property: margin,
+    class: m,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+);
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/list-group";
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+%font-weight-300 {
+  font-weight: 300;
+}
+%very-dark-blue-font-color {
+  color: $very-dark-blue;
+}
+%font-color-gray {
+  color: $gray;
+}
+html {
+  font-family: "LibreFranklin-Bold";
+  font-size: 20px;
+}
+.logo {
+  width: 2.5rem;
+}
+h1,
+h2 {
+  @extend %font-weight-300;
+}
+h1,
+footer p {
+  @extend %font-color-gray;
+}
+h1 {
+  color: $gray;
+  font-size: 1.4rem;
+  strong {
+    font-weight: 700;
+  }
+}
+h1 strong,
+h2 {
+  @extend %very-dark-blue-font-color;
+}
+h2 {
+  font-size: 0.83rem;
+}
+input,
+.btn {
+  padding: 0.65rem 1.5rem !important;
+}
+.input-wrapper {
+  margin-bottom: 0.5rem;
+}
+.input-error-message {
+  color: $light-red;
+  font-size: 0.7rem;
+  padding-top: 0.5rem;
+}
+.show-input-error {
+  border: 1px solid $light-red;
+}
+.show-input-error + .input-error-message {
+  margin-bottom: 1.25rem;
+}
+.btn {
+  background-color: $blue;
+}
+
+li {
+  border-color: $pale-blue;
+}
+svg {
+  width: 1rem;
+  fill: $blue;
+}
+footer p {
+  font-size: 0.65rem;
+}
