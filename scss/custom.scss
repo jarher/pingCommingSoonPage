@@ -21,10 +21,13 @@ $lg-5_6: 5.6;
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$btn-color: $white;
+$primary: $blue;
 $input-border-color: $pale-blue;
 $input-border-width: 1px;
-$input-placeholder-color: $gray;
+$input-placeholder-color: $pale-blue;
+$btn-padding-y: 0.65rem;
+$btn-padding-x: 1.5rem;
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -81,8 +84,8 @@ $utilities: (
   margin: 0;
   padding: 0;
 }
-%font-weight-300 {
-  font-weight: 300;
+%font-weight-400 {
+  font-weight: 400;
 }
 %very-dark-blue-font-color {
   color: $very-dark-blue;
@@ -97,9 +100,12 @@ html {
 .logo {
   width: 2.5rem;
 }
+header {
+  margin-top: 3.9rem !important;
+}
 h1,
 h2 {
-  @extend %font-weight-300;
+  @extend %font-weight-400;
 }
 h1,
 footer p {
@@ -119,9 +125,12 @@ h2 {
 h2 {
   font-size: 0.83rem;
 }
-input,
-.btn {
+input {
   padding: 0.65rem 1.5rem !important;
+}
+form .input-wrapper,
+.input-wrapper + div {
+  padding: 0 1.5rem;
 }
 .input-wrapper {
   margin-bottom: 0.5rem;
@@ -137,12 +146,25 @@ input,
 .show-input-error + .input-error-message {
   margin-bottom: 1.25rem;
 }
-.btn {
-  background-color: $blue;
+#submit {
+  color: $white;
+  box-shadow: 0 5px 10px rgb(209, 209, 255);
+  padding: 1.5rem 0.65rem;
+  @extend %font-weight-400;
+}
+#submit :hover {
+  opacity: 0.8 !important;
 }
 
 li {
   border-color: $pale-blue;
+  &:hover {
+    border-color: transparent;
+    background-color: $blue;
+    svg {
+      fill: $white;
+    }
+  }
 }
 svg {
   width: 1rem;
@@ -150,4 +172,30 @@ svg {
 }
 footer p {
   font-size: 0.65rem;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 4.3rem;
+  }
+  hgroup h1 {
+    font-size: 2.5rem;
+  }
+  hgroup h2 {
+    font-size: 1rem;
+  }
+  form .input-wrapper,
+  .input-wrapper + div {
+    padding: 0;
+  }
+  form .row {
+    gap: 0.7rem;
+  }
+  .input-wrapper input::placeholder {
+    font-size: 0.8rem;
+  }
+  #submit {
+    font-size: 0.75rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
 }

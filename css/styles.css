@@ -2331,13 +2331,13 @@ progress {
 }
 
 .btn {
-  --bs-btn-padding-x: 0.75rem;
-  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: 0.65rem;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-  --bs-btn-color: hsl(0, 0%, 100%);
+  --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
   --bs-btn-border-width: var(--bs-border-width);
   --bs-btn-border-color: transparent;
@@ -2790,7 +2790,7 @@ progress {
   padding: 0;
 }
 .form-control::placeholder {
-  color: hsl(0, 0%, 59%);
+  color: hsl(223, 100%, 88%);
   opacity: 1;
 }
 .form-control:disabled {
@@ -9689,10 +9689,10 @@ textarea.form-control-lg {
   padding: 0;
 }
 
-h1, .h1,
+#submit, h1, .h1,
 h2,
 .h2 {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h1 strong, .h1 strong,
@@ -9715,6 +9715,10 @@ html {
   width: 2.5rem;
 }
 
+header {
+  margin-top: 3.9rem !important;
+}
+
 h1, .h1 {
   color: hsl(0, 0%, 59%);
   font-size: 1.4rem;
@@ -9727,9 +9731,13 @@ h2, .h2 {
   font-size: 0.83rem;
 }
 
-input,
-.btn {
+input {
   padding: 0.65rem 1.5rem !important;
+}
+
+form .input-wrapper,
+.input-wrapper + div {
+  padding: 0 1.5rem;
 }
 
 .input-wrapper {
@@ -9750,12 +9758,25 @@ input,
   margin-bottom: 1.25rem;
 }
 
-.btn {
-  background-color: hsl(223, 87%, 63%);
+#submit {
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 5px 10px rgb(209, 209, 255);
+  padding: 1.5rem 0.65rem;
+}
+
+#submit :hover {
+  opacity: 0.8 !important;
 }
 
 li {
   border-color: hsl(223, 100%, 88%);
+}
+li:hover {
+  border-color: transparent;
+  background-color: hsl(223, 87%, 63%);
+}
+li:hover svg {
+  fill: hsl(0, 0%, 100%);
 }
 
 svg {
@@ -9765,6 +9786,33 @@ svg {
 
 footer p {
   font-size: 0.65rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 4.3rem;
+  }
+  hgroup h1, hgroup .h1 {
+    font-size: 2.5rem;
+  }
+  hgroup h2, hgroup .h2 {
+    font-size: 1rem;
+  }
+  form .input-wrapper,
+  .input-wrapper + div {
+    padding: 0;
+  }
+  form .row {
+    gap: 0.7rem;
+  }
+  .input-wrapper input::placeholder {
+    font-size: 0.8rem;
+  }
+  #submit {
+    font-size: 0.75rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
