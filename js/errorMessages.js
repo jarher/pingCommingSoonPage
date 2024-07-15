@@ -1,6 +1,6 @@
 const errorMessages = {
   emailError: {
-    valueMissing: "Email cannot be empty",
+    valueMissing: "Whoops! It looks like you forgot to add your email",
     errorType: "Please provide a valid email address.",
   },
 };
